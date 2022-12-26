@@ -22,7 +22,7 @@ public class Banco {
 		Banco.lista.add(empresa);	
 	}
 	
-	public List<Empresa> getEmpresas(){
+	public List<Empresa> getEmpresas(){ //Esse método que retorna uma lista precisa ser criado nessa classe
 		return Banco.lista;
 	}
 }

@@ -3,6 +3,7 @@ package br.com.empresa.gerenciamento;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,8 +27,17 @@ public class ReqNomeResp extends HttpServlet {
 		Banco banco = new Banco();
 		banco.adiciona(empresa);
 		
+		/*
 		PrintWriter saida = response.getWriter();
 		saida.println("<html><body><h2>Nome da empresa: " + entrada + " este será o nome que foi passado.</h2></body></html>");
+		*/
+		
+		//Chamar o JSP
+		RequestDispatcher rd = request.getRequestDispatcher("novaEmpresaCriada.jsp");
+		request.setAttribute("empresa", empresa.getNome());
+		rd.forward(request, response);
+		
+		
 		
 		System.out.println("O Servlet foi executado.");
 	}
