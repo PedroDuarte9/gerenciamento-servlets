@@ -9,19 +9,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@WebServlet(urlPatterns = "/ooi")
+public class OlaServidorzinho extends HttpServlet {
 
-@WebServlet(urlPatterns = "/oi")
-public class OlaServidorzinho extends HttpServlet  {
-  
 	@Override
-	protected void service(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-		PrintWriter saida = resp.getWriter();
-		saida.println("<html>");
-		saida.println("<body>");
-		saida.println("<h1>Olá Mundo, primeiro Servlet</h1>");
-		saida.println("</body>");
-		saida.println("</html>");
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		PrintWriter mostra = resp.getWriter();
+		mostra.println("<html><body>Olá mundo, primeiro servlet.</body></html>");
 		
-		System.out.println("O Servlet foi chamado");
+		System.out.println("O Servlet OlaServidorzinho foi chamado");
+		
 	}
 }

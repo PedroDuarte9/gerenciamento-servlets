@@ -3,22 +3,41 @@ package br.com.empresa.gerenciamento;
 public class Empresa {
 	
 	private Integer id;
-	private String nome;
+	private String name;
 	
 	
+	public Empresa () {
+		
+	}
+	
+	public Empresa(Integer id, String name) {
+		
+		this.id = id;
+		this.name = name;
+	}
+
 	public Integer getId() {
 		return id;
 	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	
-	
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	
+	@Override
+	public String toString() {
+		return "Empresa " +  name;
+	}
+	
+	
+	
 }

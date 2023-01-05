@@ -1,7 +1,6 @@
 package br.com.empresa.gerenciamento;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -12,30 +11,32 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ListaDeEmpresas
- * 
- * Essa classe é responsável por mostrar uma lista das empresas cadastradas no banco 
- * 
+ * Servlet implementation class ListaEmpresas
  */
-@WebServlet("/listaDeEmpresas")
-public class ListaDeEmpresas extends HttpServlet {
+@WebServlet("/listaEmpresas")
+public class ListaEmpresas extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("Listando Empresas");
 		
+		String parametro = request.getParameter("parametro");
+		
+		Empresa empresa = new Empresa();
+		empresa.setName(parametro);
+				
 		Banco banco = new Banco();
-		List<Empresa> list = banco.getEmpresas(); //Está lista precisa ser criada na classe de referencia como um método para poder funcionar
-		request.setAttribute("listaEmpresas", list);
+		banco.adiciona(empresa);
 		
+		List<Empresa> list = banco.getListagem();
+		request.setAttribute("atributo", list);
+	
 		
-		
-		RequestDispatcher rd = request.getRequestDispatcher("listaEmpresas.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresass.jsp");
 		
 		rd.forward(request, response);
 		
 		
-		 
 	}
 
 }
