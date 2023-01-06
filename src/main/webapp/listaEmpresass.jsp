@@ -14,7 +14,7 @@
 	
 		<ul>
 		<c:forEach items="${atributo}" var="atributos">
-			<li>${atributos.name }</li>
+			<li>${atributos.name } </li> ${atributos.data} <!-- EM EDIÇÃO -->
 		</c:forEach>
 		</ul>
 		

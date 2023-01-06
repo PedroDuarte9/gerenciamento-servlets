@@ -1,10 +1,12 @@
 package br.com.empresa.gerenciamento;
 
+import java.util.Date;
+
 public class Empresa {
 	
 	private Integer id;
 	private String name;
-	
+	private Date data = new Date();
 	
 	public Empresa () {
 		
@@ -31,8 +33,16 @@ public class Empresa {
 	public void setName(String name) {
 		this.name = name;
 	}
-
 	
+	
+	public Date getData() {
+		return data;
+	}
+
+	public void setData(Date data) {
+		this.data = data;
+	}
+
 	@Override
 	public String toString() {
 		return "Empresa " +  name;

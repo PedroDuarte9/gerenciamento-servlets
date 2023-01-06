@@ -1,6 +1,9 @@
 package br.com.empresa.gerenciamento;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -21,9 +24,21 @@ public class ListaEmpresas extends HttpServlet {
 		System.out.println("Listando Empresas");
 		
 		String parametro = request.getParameter("parametro");
+		String dataParametro = request.getParameter("data");
+		
+		
+		Date paramData = null; //EM EDIÇÃO
+		try {
+			SimpleDateFormat sdf = new SimpleDateFormat();
+			paramData = sdf.parse(dataParametro);
+		} catch (ParseException e) {
+			
+			e.printStackTrace();
+		}
 		
 		Empresa empresa = new Empresa();
 		empresa.setName(parametro);
+		empresa.setData(paramData);
 				
 		Banco banco = new Banco();
 		banco.adiciona(empresa);

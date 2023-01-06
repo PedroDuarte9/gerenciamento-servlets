@@ -14,6 +14,8 @@
 	
 	Nome<input type ="text" name="parametro"/>	
 	
+	Data<input type="text" nome="data"/> <!-- EM EDIÇÃO -->
+	
 		
 		<input type ="submit"/>
 	
