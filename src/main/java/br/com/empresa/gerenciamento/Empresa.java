@@ -45,7 +45,7 @@ public class Empresa {
 
 	@Override
 	public String toString() {
-		return "Empresa " +  name;
+		return "Empresa " +  name + data;
 	}
 	
 	

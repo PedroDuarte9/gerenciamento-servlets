@@ -19,21 +19,24 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/listaEmpresas")
 public class ListaEmpresas extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Listando Empresas");
 		
 		String parametro = request.getParameter("parametro");
+		
 		String dataParametro = request.getParameter("data");
 		
 		
-		Date paramData = null; //EM EDIÇÃO
+		Date paramData = null; 
 		try {
-			SimpleDateFormat sdf = new SimpleDateFormat();
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 			paramData = sdf.parse(dataParametro);
 		} catch (ParseException e) {
 			
-			e.printStackTrace();
+			throw new ServletException(e);
 		}
 		
 		Empresa empresa = new Empresa();

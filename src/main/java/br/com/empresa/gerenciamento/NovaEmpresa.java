@@ -16,12 +16,12 @@ import javax.servlet.http.HttpServletResponse;
 public class NovaEmpresa extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		System.out.println("Cadastrando nova empresa");
 		
 		String parameterName = request.getParameter("parametro");
-		String dataParametro = request.getParameter("data");
+		
 		
 		Empresa empresa = new Empresa();
 		empresa.setName(parameterName);
@@ -31,7 +31,7 @@ public class NovaEmpresa extends HttpServlet {
 		
 		//Despachando a requisição para o JSP
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/novaEmpresaCriada.jsp");// Aqui eu informo o caminho JSP para onde vou despachar a requisição
+		RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas.jsp");// Aqui eu informo o caminho JSP para onde vou despachar a requisição
 		request.setAttribute("xpto", empresa.getName()); //Aqui eu crio um apelido que será chamado na página JSP acima  e o objeto com see getName() ou qualquer get que for necessário 
 		rd.forward(request, response);//Aqui é a requisisção sendo enviada de fato para o JSP
 	}

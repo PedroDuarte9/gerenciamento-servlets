@@ -5,9 +5,6 @@
 	<title>Página de Lista</title>	
 		<body>
 			<form action="${listaDeEmpresas}">
-				<c:if test="${not empty xpto }">
-					Empresa: ${xpto} criada com sucesso ! 
-				</c:if>
 				<c:if test="${empty xpto }">
 					Nenhuma empresa cadastrada
 				</c:if>
