@@ -25,33 +25,15 @@ public class ListaEmpresas extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Listando Empresas");
 		
-		String parametro = request.getParameter("parametro");
-		
-		String dataParametro = request.getParameter("data");
-		
-		
-		Date paramData = null; 
-		try {
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-			paramData = sdf.parse(dataParametro);
-		} catch (ParseException e) {
-			
-			throw new ServletException(e);
-		}
-		
-		Empresa empresa = new Empresa();
-		empresa.setName(parametro);
-		empresa.setData(paramData);
-				
+						
 		Banco banco = new Banco();
-		banco.adiciona(empresa);
 		
 		List<Empresa> list = banco.getListagem();
+		
 		request.setAttribute("atributo", list);
 	
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresass.jsp");
-		
 		rd.forward(request, response);
 		
 		

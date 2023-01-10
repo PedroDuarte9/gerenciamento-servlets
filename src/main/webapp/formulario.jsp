@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
-<c:url value="/listaEmpresas" var="registroNovaEmpresa"/> <!-- Aqui passamos o caminho para a servlet e a servlet envia para o outro JSP que entrega a response -->
+<c:url value="/novaEmpresa" var="registroNovaEmpresa"/> <!-- Aqui passamos o caminho para a servlet e a servlet envia para o outro JSP que entrega a response -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,11 +14,11 @@
 	
 	Nome<input type ="text" name="parametro"/>	
 	
-	Data<input type="text" nome="data"/> <!-- EM EDIÇÃO -->
-	
+	Data<input type="text" name="data"/> <!-- EM EDIÇÃO -->
 		
 		<input type ="submit"/>
 	
 	</form>
 </body>
 </html>
+
