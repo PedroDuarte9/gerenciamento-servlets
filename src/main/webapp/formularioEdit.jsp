@@ -16,7 +16,7 @@
 	
 	Data<input type="text" name="data" value="<fmt:formatDate value="${empresa.data }" pattern="dd/MM/yyyy"/>" /> 
 	
-	Id<input type="text" name="id" value="${empresa.id}"/>	
+	Id<input type="hidden" name="id" value="${empresa.id}"/>	
 		<input type ="submit"/>
 	
 	</form>
