@@ -1,23 +1,18 @@
-package br.com.empresa.gerenciamento;
+package br.com.empresa.acao;
 
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.empresa.model.Banco;
 import br.com.empresa.model.Empresa;
 
-@WebServlet("/mostraEmpresas")
-public class MostrarEmpresasServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+public class MostraAcao {
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String paramId = request.getParameter("id"); 
 		
 		Integer id = Integer.valueOf(paramId);
@@ -33,9 +28,9 @@ public class MostrarEmpresasServlet extends HttpServlet {
 		RequestDispatcher rd = request.getRequestDispatcher("/formularioEdit.jsp");
 		rd.forward(request, response);
 		
-	
-		
 		
 	}
+
+	
 
 }

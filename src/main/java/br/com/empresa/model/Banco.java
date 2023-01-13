@@ -1,4 +1,4 @@
-package br.com.empresa.gerenciamento;
+package br.com.empresa.model;
 
 import java.util.ArrayList;
 import java.util.Iterator;

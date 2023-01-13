@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.empresa.model.Banco;
+import br.com.empresa.model.Empresa;
+
 /**
  * Servlet implementation class AlterarEmpresasServlet
  */
